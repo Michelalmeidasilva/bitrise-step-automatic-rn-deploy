@@ -15,7 +15,7 @@ workflows:
   test:
     steps:
       - avd-manager@1:
-          # run_if: '{{getenv "INSTRUMENTED_TESTS" | eq "enabled"}}'
+          run_if: '{{getenv "INSTRUMENTED_TESTS" | eq "enabled"}}'
           inputs:
             - api_level: '26'
       - script@1:
@@ -48,15 +48,14 @@ workflows:
             - command: install
           title: Run yarn install command
       - wait-for-android-emulator@1:
-          {}
-          # run_if: '{{getenv "INSTRUMENTED_TESTS" | eq "enabled"}}'
-      # - fastlane@3:
-      #     run_if: '{{getenv "INSTRUMENTED_TESTS" | eq "enabled"}}'
-      #     inputs:
-      #       - work_dir: '$BITRISE_SOURCE_DIR/android'
-      #       - verbose_log: 'yes'
-      #       - lane: bitrise_detox_tests
-      #     title: fastlane instrumented tests
+          run_if: '{{getenv "INSTRUMENTED_TESTS" | eq "enabled"}}'
+      - fastlane@3:
+          run_if: '{{getenv "INSTRUMENTED_TESTS" | eq "enabled"}}'
+          inputs:
+            - work_dir: '$BITRISE_SOURCE_DIR/android'
+            - verbose_log: 'yes'
+            - lane: bitrise_detox_tests
+          title: fastlane instrumented tests
 
       - script:
           inputs:
