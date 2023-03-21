@@ -10,14 +10,9 @@
 title: |-
   Automatic react-native android deploy.
 summary: |
-    This step aims to automate the Android processes of building, testing, and deploying a React Native application.
+  This step aims to automate the Android processes of building, testing, and deploying a React Native application.
 description: |
-More details:
-React Native is a popular framework for building mobile apps that allows developers to write code once and deploy it on both iOS and Android platforms.
-However, building and deploying React Native apps on Android can be a complex process that requires configuring multiple tools and platforms.
-This step helps streamline that process by automating the build, test, and deployment steps for Android.
-It can be integrated into a bitrise workflow to automatically trigger these steps whenever there is a change in the codebase, ensuring that the app is always up-to-date and working as expected.
-The step may include tasks such as installing dependencies, running tests, compiling the code, and generating the APK for deployment.
+  This step aims to automate the Android processes of building, testing, and deploying a React Native application.
 
 website: https://github.com/Michelalmeidasilva/bitrise-step-automatic-react-native-android-deploy
 source_code_url: https://github.com/Michelalmeidasilva/bitrise-step-automatic-react-native-android-deploy
@@ -66,16 +61,14 @@ type_tags:
 #   apt_get:
 #   - name: cmake
 
-
 toolkit:
   bash:
     entry_file: step.sh
 
-
 inputs:
   - example_step_input: Default Value - you can leave this empty if you want to
     opts:
-      title: "Example Step Input"
+      title: 'Example Step Input'
       summary: Summary. No more than 2-3 sentences.
       description: |
         Description of this input.
@@ -88,7 +81,7 @@ inputs:
 outputs:
   - EXAMPLE_STEP_OUTPUT:
     opts:
-      title: "Example Step Output"
+      title: 'Example Step Output'
       summary: Summary. No more than 2-3 sentences.
       description: |
         Description of this output.
